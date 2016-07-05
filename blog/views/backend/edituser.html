@@ -1,0 +1,60 @@
+<include file="Public/b_head.html"/>
+<include file="Public/b_banner.html"/>
+<div class="container">
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Info</div>
+        <div class="panel-body">
+            <form class="form-horizontal" action="{:U('Backend/edituser')}" method="post">
+                <input type="hidden" value="{$info.id}" name="id">
+                <div class="form-group">
+                    <label for="Account" class="col-sm-2 control-label">Account</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="account" value="{$info.account}" id="Account" placeholder="Account">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Password" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="password" value="{$info.password}" id="Password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="Name" name="name" value="{$info.name}" placeholder="Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Sex" class="col-sm-2 control-label">Sex</label>
+                    <div class="col-sm-1" id="Sex">
+                        <select class="form-control" name="sex">
+                            <option value="man" <if condition="$info.sex eq woman">selected="selected"</if> >男</option>
+                            <option value="woman"  <if condition="$info.sex eq woman">selected="selected"</if> >女</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Birth" class="col-sm-2 control-label">Birth</label>
+                    <div class="col-sm-10">
+                        <input type="datetime" class="form-control" id="Birth" name="birth" value="{$info.birth}" placeholder="Birth">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="level" class="col-sm-2 control-label">level</label>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="level" value="{$info.level}" id="level" placeholder="level">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-info">{$sub}</button>
+                        <button type="button" class="btn btn-default">取消</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<include file="Public/b_foot.html"/>
