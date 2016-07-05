@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Backend extends CI_Controller{
+class Index extends CI_Controller{
 
     function __construct(){
         parent::__construct();
@@ -20,6 +20,7 @@ class Backend extends CI_Controller{
         $redis->set('times',$redis->get('times')+1);
 
         $data['times'] = $redis->get('times');
+        print_r($data);
         $data['css'] = $this->config->item('backend_css');
         $data['js'] = $this->config->item('backend_js');
         $data['base_url'] = $this->config->item('base_url');
