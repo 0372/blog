@@ -13,7 +13,7 @@
     <div class="container-login">
         <form nethod="post">
             <div >
-                <?php echo anchor('blog/backend/index','click here'); ?>
+                <?php echo anchor('Index/index','click here'); ?>
             </div>
             <div class="form-group">
                 <label class="form-label">Account:</label>
