@@ -11,6 +11,7 @@ class RedisMy {
     function connect(){
         try{
             $this->redis->connect('127.0.0.1');
+            $this->redis->auth("598412732@qq.com");
         }catch (Exception $e){
             echo $e->getMessage();
         }

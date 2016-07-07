@@ -17,6 +17,7 @@ class Index extends CI_Controller{
 //        $redis->ping();
 //        $a= $redis->get('times');
 //        $a++;
+        
         $redis->set('times',$redis->get('times')+1);
 
         $data['times'] = $redis->get('times');
