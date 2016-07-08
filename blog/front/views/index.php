@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Black &amp; White</title>
+		<title>Felix &amp; Blog</title>
 
 		<!-- meta -->
 		<meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	    <!-- css -->
-		<link rel="stylesheet" href="<?php echo base_url('front/view/css/bootstrap.min.css');?>">
-		<link rel="stylesheet" href="<?php echo $base_url;?>css/ionicons.min.css">
-		<link rel="stylesheet" href="<?php echo $base_url;?>css/pace.css">
-	    <link rel="stylesheet" href="<?php echo $base_url;?>css/custom.css">
+		<link rel="stylesheet" href="<?php echo $static_url;?>css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo $static_url;?>css/ionicons.min.css">
+		<link rel="stylesheet" href="<?php echo $static_url;?>css/pace.css">
+	    <link rel="stylesheet" href="<?php echo $static_url;?>css/custom.css">
 
 	    <!-- js -->
-	    <script src="js/jquery-2.1.3.min.js"></script>
-	    <script src="js/bootstrap.min.js"></script>
-	    <script src="js/pace.min.js"></script>
-	    <script src="js/modernizr.custom.js"></script>
+	    <script src="<?php echo $static_url;?>js/jquery-2.1.3.min.js"></script>
+	    <script src="<?php echo $static_url;?>js/bootstrap.min.js"></script>
+	    <script src="<?php echo $static_url;?>js/pace.min.js"></script>
+	    <script src="<?php echo $static_url;?>js/modernizr.custom.js"></script>
 	</head>
 
 	<body>

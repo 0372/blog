@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://www.felixgu.cn/';
-
+$config['static_url'] = 'http://www.felixgu.cn/blog/front/static/';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -36,7 +36,7 @@ $config['base_url'] = 'http://www.felixgu.cn/';
 |
 */
 //if($_SERVER['SERVER_NAME']=='www.felixgu.cn'){
-    $config['index_page'] = 'index.php';
+$config['index_page'] = 'index.php';
 //}elseif($_SERVER['SERVER_NAME']=='backend.felixgu.cn'){
 //    $config['index_page'] = 'Backend.php';
 //}
@@ -140,7 +140,7 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = false;
+$config['composer_autoload'] = true;
 
 /*
 |--------------------------------------------------------------------------
