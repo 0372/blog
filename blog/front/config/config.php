@@ -228,7 +228,7 @@ $config['log_threshold'] = 0;
 | application/logs/ directory. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = '/var/www/html/application/logs/';
+$config['log_path'] = '/var/www/html/blog/front/logs/';
 
 /*
 |--------------------------------------------------------------------------
@@ -276,7 +276,7 @@ $config['log_date_format'] = 'Y-m-d H:i:s';
 | application/views/errors/ directory.  Use a full server path with trailing slash.
 |
 */
-$config['error_views_path'] = '/var/www/html/application/views/errors/';
+$config['error_views_path'] = '/var/www/html/blog/front/views/errors/';
 
 /*
 |--------------------------------------------------------------------------
@@ -287,7 +287,7 @@ $config['error_views_path'] = '/var/www/html/application/views/errors/';
 | application/cache/ directory.  Use a full server path with trailing slash.
 |
 */
-$config['cache_path'] = '/var/www/html/application/cache/';
+$config['cache_path'] = '/var/www/html/blog/front/cache/';
 
 /*
 |--------------------------------------------------------------------------
