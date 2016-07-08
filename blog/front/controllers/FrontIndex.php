@@ -18,7 +18,10 @@ class FrontIndex extends CI_Controller {
 		$base_url = $this->config->item('static_url');
 		$dta['static_url'] = $base_url;
 //		$this->load->view('css/bootstrap.min.css');
-		$this->load->view('index',$dta);
+		$this->load->view('head',$dta);
+        $this->load->view('index',$dta);
+        $this->load->view('foot',$dta);
+
 //		$this->load->view('index');
 	}
 }

@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Felix &amp; Blog</title>
 
-		<!-- meta -->
-		<meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-	    <!-- css -->
-		<link rel="stylesheet" href="<?php echo $static_url;?>css/bootstrap.min.css">
-		<link rel="stylesheet" href="<?php echo $static_url;?>css/ionicons.min.css">
-		<link rel="stylesheet" href="<?php echo $static_url;?>css/pace.css">
-	    <link rel="stylesheet" href="<?php echo $static_url;?>css/custom.css">
-
-	    <!-- js -->
-	    <script src="<?php echo $static_url;?>js/jquery-2.1.3.min.js"></script>
-	    <script src="<?php echo $static_url;?>js/bootstrap.min.js"></script>
-	    <script src="<?php echo $static_url;?>js/pace.min.js"></script>
-	    <script src="<?php echo $static_url;?>js/modernizr.custom.js"></script>
-	</head>
-
-	<body>
 		<div class="container">	
 			<header id="site-header">
 				<div class="row">
@@ -205,15 +183,6 @@
 				</div>
 			</div>
 		</div>
-		<footer id="site-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<p class="copyright">&copy; 2014 ThemeWagon.com -More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-					</div>
-				</div>
-			</div>
-		</footer>
 
 		<!-- Mobile Menu -->
 		<div class="overlay overlay-hugeinc">
@@ -228,7 +197,4 @@
 			</nav>
 		</div>
 
-		<script src="js/script.js"></script>
 
-	</body>
-</html>
