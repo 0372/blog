@@ -8,7 +8,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	    <!-- css -->
-		<link rel="stylesheet" href="<?php echo $base_url;?>css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo base_url('front/view/css/bootstrap.min.css');?>">
 		<link rel="stylesheet" href="<?php echo $base_url;?>css/ionicons.min.css">
 		<link rel="stylesheet" href="<?php echo $base_url;?>css/pace.css">
 	    <link rel="stylesheet" href="<?php echo $base_url;?>css/custom.css">
