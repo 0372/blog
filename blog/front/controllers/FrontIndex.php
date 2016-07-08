@@ -10,8 +10,9 @@ class FrontIndex extends CI_Controller {
         $redis = new Redis();
 //        $redis->set('a',1);
 //        echo $redis->get('a');
-		$dta['head'] = 'const head';
-		$this->load->view('head',$dta);
-		$this->load->view('index');
+		$base_url = $this->config->item('base_url');
+		$dta['base_url'] = $base_url;
+		$this->load->view('index',$dta);
+//		$this->load->view('index');
 	}
 }
