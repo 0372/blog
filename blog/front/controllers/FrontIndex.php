@@ -16,6 +16,7 @@ class FrontIndex extends CI_Controller {
 //        $redis->set('a',1);
 //        echo $redis->get('a');
 		$base_url = $this->config->item('static_url');
+
 		$dta['static_url'] = $base_url;
 //		$this->load->view('css/bootstrap.min.css');
 		$this->load->view('head',$dta);
@@ -24,4 +25,14 @@ class FrontIndex extends CI_Controller {
 
 //		$this->load->view('index');
 	}
+
+    public function full_width(){
+
+        $base_url = $this->config->item('static_url');
+        $dta['static_url'] = $base_url;
+        $this->load->view('head',$dta);
+        $this->load->view('full_width',$dta);
+        $this->load->view('foot',$dta);
+
+    }
 }

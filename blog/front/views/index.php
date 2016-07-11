@@ -4,7 +4,7 @@
 				<div class="row">
 					<div class="col-md-4 col-sm-5 col-xs-8">
 						<div class="logo">
-							<h1><a href="index.html"><b>Black</b> &amp; White</a></h1>
+							<h1><?php echo anchor('FrontIndex/index','<b>Felix</b> &amp; Blog');?></h1>
 						</div>
 					</div><!-- col-md-4 -->
 					<div class="col-md-8 col-sm-7 col-xs-4">
@@ -17,8 +17,8 @@
 
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   								<ul class="nav navbar-nav navbar-right">
-    								<li class="cl-effect-11"><a href="index.html" data-hover="Home">Home</a></li>
-    								<li class="cl-effect-11"><a href="full-width.html" data-hover="Blog">Blog</a></li>
+    								<li class="cl-effect-11"><?php echo anchor('FrontIndex/index','Home',array('data-hover'=>'home'));?></li>
+    								<li class="cl-effect-11"><a href="" data-hover="Blog">Blog</a></li>
     								<li class="cl-effect-11"><a href="about.html" data-hover="About">About</a></li>
     								<li class="cl-effect-11"><a href="contact.html" data-hover="Contact">Contact</a></li>
   								</ul>
