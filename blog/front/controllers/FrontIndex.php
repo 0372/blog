@@ -16,7 +16,8 @@ class FrontIndex extends CI_Controller {
 //        $redis->set('a',1);
 //        echo $redis->get('a');
 		$base_url = $this->config->item('static_url');
-
+        $this->output->cache('60');
+        $this->output->enable_profiler(false);
 		$dta['static_url'] = $base_url;
 //		$this->load->view('css/bootstrap.min.css');
 		$this->load->view('head',$dta);
