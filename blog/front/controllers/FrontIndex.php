@@ -6,6 +6,8 @@ class FrontIndex extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->helpers('url_helper');
+        $this->load->helpers('visitor');
+        $this->load->model('loginfo_model');
 	}
 
 	public function index()
@@ -15,8 +17,11 @@ class FrontIndex extends CI_Controller {
         $redis = new Redis();
 //        $redis->set('a',1);
 //        echo $redis->get('a');
+        visitor();
+        $dta['ip'] = $this->loginfo_model->get_visitor_count();
+
 		$base_url = $this->config->item('static_url');
-        $this->output->cache('60');
+        $this->output->cache('0');
         $this->output->enable_profiler(false);
 		$dta['static_url'] = $base_url;
 //		$this->load->view('css/bootstrap.min.css');

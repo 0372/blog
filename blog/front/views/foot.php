@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p class="copyright">&copy; 2016 Felix <a href="" >这里啥都没有</a></p>
+                <p class="copyright">&copy; 2016 Felix <a href="" >这里啥都没有,已有<?php echo $ip; ?>位访客</a></p>
             </div>
         </div>
     </div>

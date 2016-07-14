@@ -106,7 +106,7 @@ if($_SERVER['SERVER_NAME'] == 'www.felixgu.cn'){
     $application_folder = 'blog/backend';
     $view_folder = 'blog/backend/views';
 }
-
+date_default_timezone_set('Asia/Chongqing');
 
 
 
