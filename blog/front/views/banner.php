@@ -16,10 +16,12 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="cl-effect-11"><?php echo anchor('FrontIndex/index','Home',array('data-hover'=>'Home'));?></li>
-                            <li class="cl-effect-11"><?php echo anchor('FrontIndex/full_width','Blog',array('data-hover'=>'Blog'));?></li>
-                            <li class="cl-effect-11"><?php echo anchor('FrontIndex/about','About',array('data-hover'=>'About'));?></li>
-                            <li class="cl-effect-11"><?php echo anchor('FrontIndex/contact','Contact',array('data-hover'=>'Contact'));?></li>
+                            <li class="cl-effect-11"><a href="<?php echo echo_url('FrontIndex','index') ?>"  data-hover=Home>Home</a></li>
+                            <li class="cl-effect-11"><a href="<?php echo echo_url('FrontIndex','full_width')?>"  data-hover=Blog>Blog</a></li>
+                            <li class="cl-effect-11"><a href="<?php echo echo_url('FrontIndex','about')?>"  data-hover=About>About</a></li>
+                            <li class="cl-effect-11"><a href="<?php echo echo_url('FrontIndex','contact')?>"  data-hover=Contact>Contact</a></li>
+<!--                            <li class="cl-effect-11">--><?php //echo anchor('front/FrontIndex/about/','About',array('data-hover'=>'About'));?><!--</li>-->
+<!--                            <li class="cl-effect-11">--><?php //echo anchor('FrontIndex/contact','Contact',array('data-hover'=>'Contact'));?><!--</li>-->
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>

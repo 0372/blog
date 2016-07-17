@@ -36,7 +36,7 @@ $config['static_url'] = 'http://www.felixgu.cn/blog/front/static/';
 |
 */
 //if($_SERVER['SERVER_NAME']=='www.felixgu.cn'){
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 //}elseif($_SERVER['SERVER_NAME']=='backend.felixgu.cn'){
 //    $config['index_page'] = 'Backend.php';
 //}
