@@ -20,8 +20,6 @@
                             <li class="cl-effect-11"><a href="<?php echo echo_url('FrontIndex','full_width')?>"  data-hover=Blog>Blog</a></li>
                             <li class="cl-effect-11"><a href="<?php echo echo_url('FrontIndex','about')?>"  data-hover=About>About</a></li>
                             <li class="cl-effect-11"><a href="<?php echo echo_url('FrontIndex','contact')?>"  data-hover=Contact>Contact</a></li>
-<!--                            <li class="cl-effect-11">--><?php //echo anchor('front/FrontIndex/about/','About',array('data-hover'=>'About'));?><!--</li>-->
-<!--                            <li class="cl-effect-11">--><?php //echo anchor('FrontIndex/contact','Contact',array('data-hover'=>'Contact'));?><!--</li>-->
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>

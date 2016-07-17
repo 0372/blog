@@ -8,16 +8,20 @@ class FrontIndex extends CI_Controller {
         $this->load->helpers('visitor');
         $this->load->model('loginfo_model');
         $this->load->helpers('myurl_helper');
+        $this->load->library('RedisMy');
 	}
 
 	public function index()
 	{
-        visitor();
+//        Visitor_helper::visitor();
+        $visiter = new Visitor_helper();
+        $visiter->visitor();
         $dta['ip'] = $this->loginfo_model->get_visitor_count();
 
 		$base_url = $this->config->item('static_url');
 //        $this->output->cache('0');
 //        $this->output->enable_profiler(false);
+        $dta['times'] = $this->redismy->get('times');
 		$dta['static_url'] = $base_url;
 		$this->load->view('head',$dta);
         $this->load->view('banner',$dta);
@@ -27,8 +31,11 @@ class FrontIndex extends CI_Controller {
 
     public function full_width(){
 
+
         $base_url = $this->config->item('static_url');
         $dta['ip'] = $this->loginfo_model->get_visitor_count();
+//        $dta['times'] = $this->RedisMy->get('times');
+
         $dta['static_url'] = $base_url;
         $this->load->view('head',$dta);
         $this->load->view('banner',$dta);
@@ -40,6 +47,8 @@ class FrontIndex extends CI_Controller {
 
         $base_url = $this->config->item('static_url');
         $dta['ip'] = $this->loginfo_model->get_visitor_count();
+//        $dta['times'] = $this->RedisMy->get('times');
+
         $dta['static_url'] = $base_url;
         $this->load->view('head',$dta);
         $this->load->view('banner',$dta);
@@ -50,6 +59,8 @@ class FrontIndex extends CI_Controller {
     public function contact(){
         $base_url = $this->config->item('static_url');
         $dta['ip'] = $this->loginfo_model->get_visitor_count();
+//        $dta['times'] = $this->RedisMy->get('times');
+
         $dta['static_url'] = $base_url;
         $this->load->view('head',$dta);
         $this->load->view('banner',$dta);

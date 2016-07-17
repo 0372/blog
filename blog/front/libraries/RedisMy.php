@@ -30,7 +30,7 @@ class RedisMy {
         $this->redis->lpush($name,$value);
     }
 
-    function getList($name,$start=0,$end = 5){
+    function getList($name,$start = 0,$end = 1000){
         return $this->redis->lrange($name,$start,$end);
     }
 

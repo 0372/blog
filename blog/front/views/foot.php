@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p class="copyright">&copy; 2016 Felix <a href="" >这里啥都没有,只有<?php echo $ip; ?>位访客</a></p>
+                <p class="copyright">&copy; 2016 Felix <a href="" >这里啥都没有,只有<?php echo $ip; ?>位访客和<?php echo $times?>次访问</a></p>
             </div>
         </div>
     </div>
