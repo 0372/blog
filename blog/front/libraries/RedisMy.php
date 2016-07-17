@@ -22,7 +22,9 @@ class RedisMy {
     }
 
     function set($key,$value,$time = 0){
-        $this->redis->set($key,$value,$time);
+        $this->redis->setex($key,$time,$value);
+//        $this->redis->set($key,$value);
+//        $this->redis->expire($key,$time);
     }
 
 
@@ -36,5 +38,10 @@ class RedisMy {
 
     function getKey(){
         return $this->redis->keys('*');
+    }
+
+    function incr($key){
+        $this->redis->incr($key);
+        return $this->redis->get($key);
     }
 }

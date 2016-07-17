@@ -15,13 +15,13 @@ class FrontIndex extends CI_Controller {
 	{
 //        Visitor_helper::visitor();
         $visiter = new Visitor_helper();
-        $visiter->visitor();
-        $dta['ip'] = $this->loginfo_model->get_visitor_count();
 
+        $dta['times'] = $visiter->visitor();
+        $dta['ip'] = $visiter->get_number();
 		$base_url = $this->config->item('static_url');
 //        $this->output->cache('0');
 //        $this->output->enable_profiler(false);
-        $dta['times'] = $this->redismy->get('times');
+//        $dta['times'] = $this->visitor->visitor();
 		$dta['static_url'] = $base_url;
 		$this->load->view('head',$dta);
         $this->load->view('banner',$dta);
