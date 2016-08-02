@@ -7,14 +7,32 @@ class FrontIndex extends CI_Controller {
 		parent::__construct();
         $this->load->helpers('visitor');
         $this->load->model('loginfo_model');
+        $this->load->model('article_model');
+        $this->load->model('module_model');
         $this->load->helpers('myurl_helper');
         $this->load->library('RedisMy');
 	}
 
 	public function index()
 	{
-//        Visitor_helper::visitor();
         $visiter = new Visitor_helper();
+        $module_list = $this->module_model->get_module_list();
+        foreach ($module_list as $k => $v){
+            $dta['module'][$k]['name'] = $v['name'];
+            $dta['module'][$k]['url'] = echo_url(__CLASS__,"full_width",array('moduleid' => $v['id']));
+        }
+
+        $date_list = $this->article_model->get_distinct_date();
+        foreach ($date_list as $k => $v){
+            $dta['date'][$k]['name'] = date("M d,Y",strtotime($v['createdate']));
+            $dta['date'][$k]['url'] = echo_url(__CLASS__,"single",array('date' => $v['createdate']));
+        }
+
+        $article_list = $this->article_model->get_page_list();
+        foreach ($article_list as $k => $v){
+            $dta['article'][$k] = $v;
+            $dta['article'][$k]['url'] = echo_url(__CLASS__,"single",array('articleid' => $v['id']));
+        }
 
         $dta['times'] = $visiter->visitor();
         $dta['ip'] = $visiter->get_number();
@@ -33,8 +51,9 @@ class FrontIndex extends CI_Controller {
 
 
         $base_url = $this->config->item('static_url');
-        $dta['ip'] = $this->loginfo_model->get_visitor_count();
-//        $dta['times'] = $this->RedisMy->get('times');
+        $visiter = new Visitor_helper();
+        $dta['times'] = $visiter->visitor();
+        $dta['ip'] = $visiter->get_number();
 
         $dta['static_url'] = $base_url;
         $this->load->view('head',$dta);
@@ -46,10 +65,11 @@ class FrontIndex extends CI_Controller {
     public function about(){
 
         $base_url = $this->config->item('static_url');
-        $dta['ip'] = $this->loginfo_model->get_visitor_count();
-//        $dta['times'] = $this->RedisMy->get('times');
-
+        $visiter = new Visitor_helper();
+        $dta['times'] = $visiter->visitor();
+        $dta['ip'] = $visiter->get_number();
         $dta['static_url'] = $base_url;
+
         $this->load->view('head',$dta);
         $this->load->view('banner',$dta);
         $this->load->view('about',$dta);
@@ -57,14 +77,28 @@ class FrontIndex extends CI_Controller {
     }
 
     public function contact(){
+        $visiter = new Visitor_helper();
+        $dta['times'] = $visiter->visitor();
+        $dta['ip'] = $visiter->get_number();
         $base_url = $this->config->item('static_url');
-        $dta['ip'] = $this->loginfo_model->get_visitor_count();
-//        $dta['times'] = $this->RedisMy->get('times');
-
         $dta['static_url'] = $base_url;
+
         $this->load->view('head',$dta);
         $this->load->view('banner',$dta);
         $this->load->view('contact',$dta);
+        $this->load->view('foot',$dta);
+    }
+
+    public function single(){
+        $visiter = new Visitor_helper();
+        $dta['times'] = $visiter->visitor();
+        $dta['ip'] = $visiter->get_number();
+        $base_url = $this->config->item('static_url');
+        $dta['static_url'] = $base_url;
+
+        $this->load->view('head',$dta);
+        $this->load->view('banner',$dta);
+        $this->load->view('single',$dta);
         $this->load->view('foot',$dta);
     }
 
