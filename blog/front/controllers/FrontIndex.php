@@ -9,6 +9,7 @@ class FrontIndex extends CI_Controller {
         $this->load->model('loginfo_model');
         $this->load->model('article_model');
         $this->load->model('module_model');
+        $this->load->model('contact_model');
         $this->load->helpers('myurl_helper');
         $this->load->library('RedisMy');
 	}
@@ -32,6 +33,12 @@ class FrontIndex extends CI_Controller {
         foreach ($article_list as $k => $v){
             $dta['article'][$k] = $v;
             $dta['article'][$k]['url'] = echo_url(__CLASS__,"single",array('articleid' => $v['id']));
+        }
+
+        $lastarticle_list = $this->article_model->get_last_article();
+        foreach ($lastarticle_list as $k => $v){
+            $dta['lastupdate'][$k]['name'] = $v['title'];
+            $dta['lastupdate'][$k]['url'] = echo_url(__CLASS__,"single",array('articleid' => $v['id']));
         }
 
         $dta['times'] = $visiter->visitor();
@@ -77,6 +84,11 @@ class FrontIndex extends CI_Controller {
     }
 
     public function contact(){
+        if($_POST){
+            $post = $_POST;
+            $post['ip'] = $_SERVER['REMOTE_ADDR'];
+            $this->contact_model->insert($post);
+        }
         $visiter = new Visitor_helper();
         $dta['times'] = $visiter->visitor();
         $dta['ip'] = $visiter->get_number();

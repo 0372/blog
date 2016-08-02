@@ -32,17 +32,13 @@
 					</main>
 					<aside class="col-md-4">
 						<div class="widget widget-recent-posts">		
-							<h3 class="widget-title">Recent Posts</h3>		
+							<h3 class="widget-title">Recent Posts</h3>
 							<ul>
-								<li>
-									<a href="#">Adaptive Vs. Responsive Layouts And Optimal Text Readability</a>
+								<?php foreach ($lastupdate as $v): ?>
+									<li>
+									<a href="<?php echo $v['url'] ?>"><?php echo $v['name'] ?></a>
 								</li>
-								<li>
-									<a href="#">Web Design is 95% Typography</a>
-								</li>
-								<li>
-									<a href="#">Paper by FiftyThree</a>
-								</li>
+								<?php endforeach; ?>
 							</ul>
 						</div>
 						<div class="widget widget-archives">		

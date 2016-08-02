@@ -10,13 +10,11 @@ class Visitor_helper{
     }
 
     function visitor(){
-//        $log = new LogInfo_model();
         $ip = $_SERVER['REMOTE_ADDR'];
         $r = new RedisMy();
         if(!in_array($ip,array_values($r->getList('IP'))))
             $r->setList('IP',$ip);
         return $r->incr('times');
-//        $log->insert_ip($ip);
     }
 
     function get_number(){

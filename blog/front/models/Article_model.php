@@ -25,4 +25,10 @@ class Article_model extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+
+    function get_last_article($size = 3){
+        $sql = "select a.*,b.name as mname from article a left join module b on a.moduleid=b.id order by a.lastupdatetime limit $size";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
